@@ -78,22 +78,36 @@ int main()
 
 	//Initialize weapons 
 	//Name, type, description, size, power, accuracy
-	Weapon sword("Rusty sword", "sword", "a dull weapon. Found at a previous dig site to be kept as an antique.", 3, 7, 75); //Starting sword
+	Weapon sword("Rusty sword", "sword", "A dull weapon. Found at a previous dig site to be kept as an antique.", 3, 5, 85); //Starting sword
 
-	Weapon axe("Axe of Death", "axe", "an axe used by an executioner, with the word 'DEATH' engraved in its handle.", 5, 12, 60);
+	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the word 'DEATH' engraved in its handle.", 5, 12, 60);
 	axe.setFindStr("A thick stone block sits in the center of the room. Against it leans a mighty axe.");
+	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip. \nEasy to use and keep your distance, but not the most effective.",9,9,80);
+	spear.setFindStr("");
+	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
+	mace.setFindStr("");
+	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle. Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
+	dagger.setFindStr("");
+	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
+	khopesh.setFindStr("");
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
-	Item rock("Rock", "rock", "a small rock.", 1, 5, 1);	//Starting item
+	Item rock("Rock", "rock", "a small rock.", 1, -1, 0);	//Starting item
 
-	Item potion1("Elixir of Life", "potion", "pink, glowing liquid that contains the essence of life.", 3, 25, 5);
+	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power. Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
+	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep warriors in the battle.", 3, 40, 0);
+	potion2.setFindStr("");
+	Item defib("Defibrillator", "device", "An weak and old defibrillator. Could be used to spark adrenaline.", 6, 50, -20);
+	defib.setFindStr("");
+	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.", 2, 7, 0);
+	apple.setFindStr("");
 
 	//Initialize enemies
 	//Name, type, health, power, accuracy
 	Enemy leopard("Akin the Protector", "leopard", 9, 5, 50);
-	leopard.setFindStr("");
+	leopard.setFindStr("In the middle of the room, something covered in what appears as black rosettes rests. Upon closer look, you\nrealize the rose shaped spots and the cream/orange background create the pattern of a large feline.");
 	Enemy skeleton("Judas the Forgotten", "skeleton", 15, 3, 40);
 	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored skeleton\nof the abandoned body rises and guards the room.");
 	Enemy scribe("Dedi the Wicked", "scribe", 20, 4, 60);
