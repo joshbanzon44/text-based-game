@@ -98,7 +98,7 @@ int main()
 	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power. Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
 	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep warriors in the battle.", 3, 40, 0);
-	potion2.setFindStr("");
+	potion2.setFindStr("A nearly empty bottle rack sits in the corner of the room. On it, sits a single sealed liquid with the label 'SEKHEM.'");
 	Item defib("Defibrillator", "device", "An weak and old defibrillator. Could be used to spark adrenaline.", 6, 50, -20);
 	defib.setFindStr("");
 	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.", 2, 7, 0);
