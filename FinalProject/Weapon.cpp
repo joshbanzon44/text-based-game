@@ -36,7 +36,7 @@ Weapon::Weapon(string n, string t, string d, int s, int p, int a)
 void Weapon::toString()
 {
 	cout << name << "; Type: " << type << " - " << desc << endl;
-	cout << "		Size: " << size << "		Power: " << power << "		Accuracy: " << accuracy << endl;
+	cout << "	Size: " << size << "	Power: " << power << "		Accuracy: " << accuracy << endl;
 }
 
 

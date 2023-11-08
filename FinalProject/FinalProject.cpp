@@ -62,23 +62,12 @@ int main()
 	//Set seed for random number generation for entire program
 	srand((unsigned)time(NULL));
 
-	//Variable constraints
-	/*
-	* Accuracy: 1-100
-	* Power: 1-20
-	* Size: 1-20
-	*
-	* //Weapon constructor
-	*  objName(Name, WeaponType, Description, Size, Power, Accuracy)
-	*
-	*/
-
 	//Initialize player
 	Player player;
 
 	//Initialize weapons 
 	//Name, type, description, size, power, accuracy
-	Weapon sword("Rusty sword", "sword", "A dull weapon. Found at a previous dig site to be kept as an antique.", 3, 5, 85); //Starting sword
+	Weapon sword("Rusty sword", "sword", "A dull weapon. Found at a previous dig site to\n	be kept as an antique.", 3, 5, 85); //Starting sword
 
 	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the word 'DEATH' engraved in its handle.", 5, 12, 60);
 	axe.setFindStr("A thick stone block sits in the center of the room. Against it leans a mighty axe.");
@@ -101,18 +90,18 @@ int main()
 	potion2.setFindStr("A nearly empty bottle rack sits in the corner of the room. On it, sits a single sealed liquid with the label 'SEKHEM.'");
 	Item defib("Defibrillator", "device", "An weak and old defibrillator. Could be used to spark adrenaline.", 6, 50, -20);
 	defib.setFindStr("");
-	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.", 2, 7, 0);
+	Item apple("Apple", "food", "An apple! It has been a while since you've eaten. But, how did an apple get here?", 2, 7, 0);
 	apple.setFindStr("");
 
 	//Boss item
-	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a droplet-shaped \nloop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
+	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a\ndroplet-shaped loop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
 
 	//Initialize enemies
 	//Name, type, health, power, accuracy
 	Enemy leopard("Akin the Protector", "leopard", 9, 5, 50);
-	leopard.setFindStr("In the middle of the room, something covered in what appears as black rosettes rests. Upon closer look, you\nrealize the rose shaped spots and the cream/orange background create the pattern of a large feline.");
+	leopard.setFindStr("In the middle of the room, something covered in what appears as black\nrosettes rests. Upon closer look, yourealize the rose shaped spots and the\ncream/orange background create the pattern of a large feline.");
 	Enemy skeleton("Judas the Forgotten", "skeleton", 15, 3, 40);
-	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored skeleton\nof the abandoned body rises and guards the room.");
+	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored\nskeleton of the abandoned body rises and guards the room.");
 	Enemy scribe("Dedi the Wicked", "scribe", 20, 4, 60);
 	scribe.setFindStr("");
 	Enemy lancer("Bomani the Undead","lancer",30,7,60);
@@ -143,33 +132,57 @@ int main()
 		}
 	}
 
-	//Set room entrance strings
+	//Set empty room entrance strings
+	rooms[0][0].setString("You enter an empty room. The variance of fade on the floor tells you whatever\nwas here was either moved, or taken.");
+	rooms[1][1].setString("You enter a cracked room where debris fell from the ceiling and smashed the ground in the\ncenter of the room. Time has laid waste to this room and leaves it unidentifiable.");
+	rooms[2][3].setString("You enter a tall but empty room. Faded art covers only half the ceiling and\nscaffolding blocks one of the doors. Who knows why they never finished.");
+	rooms[3][1].setString("You enter a room with what looks like a well in the center. Thirsty and excited,\nyou run to it only to find it dry. You can't remember the last time you had water.");
+	rooms[4][2].setString("You enter an empty room. The variance of fade on the floor tells you whatever\nwas here was either moved, or taken.");
 
-
-
-
-	//Set enemies in rooms
+	//Set enemies in rooms and related entrance string
 	rooms[2][1].setEnemy(leopard);
+	rooms[2][1].setString("");
+
 	rooms[0][2].setEnemy(skeleton);
+	rooms[0][2].setString("");
+
 	rooms[4][0].setEnemy(scribe);
+	rooms[4][0].setString("");
+
 	rooms[1][3].setEnemy(lancer);
+	rooms[1][3].setString("");
+
 	rooms[3][3].setEnemy(ra);
+	rooms[3][3].setString("");
 
-	//Set weapons in rooms
+	//Set weapons in rooms and related entrance string
 	rooms[3][2].setWeapon(axe);
+	rooms[3][2].setString("");
+
 	rooms[0][3].setWeapon(khopesh);
+	rooms[0][3].setString("");
+
 	rooms[4][1].setWeapon(spear);
+	rooms[4][1].setString("");
+
 	rooms[1][0].setWeapon(dagger);
+	rooms[1][0].setString("");
+
 	rooms[1][2].setWeapon(mace);
+	rooms[1][2].setString("");
 
-
-	//Set items in rooms
+	//Set items in rooms and related entrance string
 	rooms[4][3].setItem(potion1);
+	rooms[4][3].setString("");
+
 	rooms[2][2].setItem(potion2);
+	rooms[2][2].setString("");
+
 	rooms[3][0].setItem(apple);
+	rooms[3][0].setString("");
+
 	rooms[0][1].setItem(defib);
-
-
+	rooms[0][1].setString("");
 
 	//Give player starting items
 	player.get(sword);
@@ -360,7 +373,7 @@ int main()
 			{
 				cout << "There are not any items to pick up." << endl;
 			}
-			else if (input.find("open") != string::npos || input.find("inv") != string::npos || input.find("back") != string::npos)		//Sneak
+			else if (input.find("open") != string::npos || input.find("inv") != string::npos || input.find("backpack") != string::npos)		//Sneak
 			{
 				system("cls");
 				player.openInventory();
@@ -414,7 +427,7 @@ int main()
 		cout << "----------------------------------------------------------------------------" << endl;
 
 		//If they visit all 20 rooms, allow player to leave.
-		if (roomsVisited >= 10 && enemiesDefeated >= 5 && exitNotif)
+		if (exitNotif && roomsVisited >= 10 && enemiesDefeated >= 5)
 		{
 			canExit = true;
 			exitNotif = false;
@@ -427,7 +440,7 @@ int main()
 		{
 			//Allow player to leave pyramid and win
 			cout << "You feel the outside breeze and see an opened door. You realize you're back" << 
-				"\nin the room you entered into. A sense of relief fills your mind knowing you are \nfinally free." << endl;
+				"\nin the room you entered from. A sense of relief fills your mind knowing you\nare finally free." << endl;
 			cout << "----------------------------------------------------------------------------" << endl;
 			cout << "Are you ready to leave?" << endl;
 			cin >> input;
@@ -436,9 +449,9 @@ int main()
 
 			if (input.find("yes") != string::npos || input.find("y") != string::npos || input.find("please") != string::npos)
 			{
-				cout << "You have walk out of the pyramid and see a group of wanders. With what energy\nyou still possess, you take off"
-					<< " towards them and explain who you are. They take you in\nand guide you back to your camp. You believe life will return to normal,"
-					<< " until the sun sets and the wooden ankh you kept from Ra begins to glow..." << endl << endl;
+				cout << "You have walk out of the pyramid and see a group of wanders. With what\nenergy you still possess, you take off"
+					<< " towards them and explain who you are.\nThey take you in and guide you back to your camp. You believe life will\nreturn to normal,"
+					<< " until the sun sets and the wooden ankh you kept from Ra\nbegins to glow..." << endl << endl;
 			}
 			else if (input.find("no") != string::npos || input.find("stay") != string::npos || input.find("dont") != string::npos)
 			{
@@ -449,8 +462,8 @@ int main()
 			}
 			else
 			{
-				cout << "You're unsure of your decision, but the fear this place strikes into you forces you to leave." << endl;
-				cout << "You have walk out of the pyramid and see a group of wanders. With what energy\nyou still possess, you take off"
+				cout << "You're unsure of your decision, but the fear this place strikes into you\nforces you to leave. ";
+				cout << "You have walk out of the pyramid and see a group of \nwanders. With what energyyou still possess, you take off"
 					<< " towards them and explain who you are. They take you in\nand guide you back to your camp. You believe life will return to normal,"
 					<< " until the sun sets and the wooden ankh you kept from Ra begins to glow..." << endl << endl;
 			}

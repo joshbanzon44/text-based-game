@@ -28,7 +28,7 @@ Item::Item(string n, string t, string d, int s, int h, int m, bool u)
 void Item::toString()
 {
 	cout << name << "; Type: " << type << " - " << desc << endl;
-	cout << "		Size: " << size << "		Health increase : " << healthIncrease << "		Max Health Increase : " << maxHealthIncrease << endl << endl;
+	cout << "	Size: " << size << "		Health increase : " << healthIncrease << "	Max Health Increase : " << maxHealthIncrease << endl << endl;
 }
 
 void Item::setFindStr(string s)

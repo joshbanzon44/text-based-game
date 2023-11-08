@@ -31,8 +31,8 @@ void Player::openInventory()
 		cout << "----------------------------------------------------------------------------" << endl;
 		return;
 	}
-
-	cout << "Weapons: " << "                                                    Health: " << healthCurrent << "/" << healthMax << endl;
+	cout << "		                                             Health: " << healthCurrent << "/" << healthMax << endl;
+	cout << "Weapons: " << endl;
 	int i;
 	int n = 1;
 
@@ -76,7 +76,8 @@ void Player::openInventory()
 
 	if (input.find("quit") != string::npos)
 	{
-		return;
+		cout << "Exiting...Thank you for playing!" << endl;
+		exit(0);
 	}
 
 	while (input.find("exit") == string::npos || input.find("close") == string::npos || input.find("leave") == string::npos) // Inventory loop
