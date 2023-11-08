@@ -93,7 +93,7 @@ int main()
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
-	Item rock("Rock", "rock", "a small rock.", 1, -1, 0);	//Starting item
+	Item rock("Rock", "rock", "a small rock.", 1, -1, 0, false);	//Starting item
 
 	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power. Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
@@ -103,6 +103,9 @@ int main()
 	defib.setFindStr("");
 	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.", 2, 7, 0);
 	apple.setFindStr("");
+
+	//Boss item
+	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a droplet-shaped \nloop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
 
 	//Initialize enemies
 	//Name, type, health, power, accuracy
@@ -153,11 +156,19 @@ int main()
 	rooms[3][3].setEnemy(ra);
 
 	//Set weapons in rooms
-	rooms[1][0].setWeapon(axe);
+	rooms[3][2].setWeapon(axe);
+	rooms[0][3].setWeapon(khopesh);
+	rooms[4][1].setWeapon(spear);
+	rooms[1][0].setWeapon(dagger);
+	rooms[1][2].setWeapon(mace);
 
 
 	//Set items in rooms
-	rooms[3][0].setItem(potion1);
+	rooms[4][3].setItem(potion1);
+	rooms[2][2].setItem(potion2);
+	rooms[3][0].setItem(apple);
+	rooms[0][1].setItem(defib);
+
 
 
 	//Give player starting items
@@ -184,7 +195,7 @@ int main()
 	cout << "		typing 'quit' at anytime will end the game. " << endl;
 	cout << "			Have fun and enjoy!" << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
-	cout << "Explore the entire pyramid, defeat all enemies, and escape the Wrath of Ra!" << endl;
+	cout << "Explore the entire pyramid, defeat all enemies, and escape the temple of Ra!" << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 
 
@@ -309,6 +320,15 @@ int main()
 					cout << "----------------------------------------------------------------------------" << endl;
 					cout << "You defeated " << currentRoom.getEnemy().name << "." << endl;
 					cout << "----------------------------------------------------------------------------" << endl;
+
+					if (currentRoom.getEnemy().type == "Ra")
+					{
+						cout << "As he falls to his knees, his body begins to disintegrate quickly. In seconds, \nall that remains is a pile of dust and his wooden ankh." << endl;
+						cout << "----------------------------------------------------------------------------" << endl;
+						cout << "You pick up the ankh." << endl;
+						cout << "----------------------------------------------------------------------------" << endl;
+					}
+
 					currentRoom.entranceStr();
 					cout << "----------------------------------------------------------------------------" << endl;
 				}
@@ -321,7 +341,7 @@ int main()
 			{
 				player.get(currentRoom.getItem());
 				currentRoom.hasItem = false;
-				cout << "You pickup the " << currentRoom.getItem().type << "." << endl;
+				cout << "You pick up the " << currentRoom.getItem().type << "." << endl;
 				cout << "----------------------------------------------------------------------------" << endl;
 			}
 			else if ((input.find("get") != string::npos || input.find("pick") != string::npos) && currentRoom.hasWeapon)	//Pick up weapon
@@ -329,12 +349,12 @@ int main()
 				player.get(currentRoom.getWeapon());
 				currentRoom.hasWeapon = false;
 
-				cout << "You pickup the " << currentRoom.getWeapon().type << "." << endl;
+				cout << "You pick up the " << currentRoom.getWeapon().type << "." << endl;
 				cout << "----------------------------------------------------------------------------" << endl;
 			}
 			else if (input.find("get") != string::npos || input.find("pick") != string::npos)	//Try to pick up item but no item in room
 			{
-				cout << "There are not any items to pickup." << endl;
+				cout << "There are not any items to pick up." << endl;
 			}
 			else if (input.find("open") != string::npos || input.find("inv") != string::npos || input.find("back") != string::npos)		//Sneak
 			{

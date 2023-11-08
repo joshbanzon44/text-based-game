@@ -10,9 +10,8 @@ public:
 	//Default constructor 
 	Item();
 	//Parameterized constructor
-	//Name, type, description, size, health increase, max health increase
-	Item(string n, string t, string d, int s, int h, int m);
-
+	//Name, type, description, size, health increase, max health increase, item usuable
+	Item(string n, string t, string d, int s, int h, int m, bool canUse = true);
 
 	//Public methods
 	void toString();
@@ -27,6 +26,7 @@ public:
 	string desc; //Description of item
 	int size;    //Inventory size
 	bool isWeapon = false;
+	bool canUse = true;
 
 	int healthIncrease;
 	int maxHealthIncrease;

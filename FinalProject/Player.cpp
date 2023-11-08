@@ -108,6 +108,24 @@ void Player::openInventory()
 			if (inputNum > inventoryItem.size() || inputNum < 1)
 			{
 				cout << "Invalid number!" << endl;
+				cout << "----------------------------------------------------------------------------" << endl;
+				cout << "Options: (change) current weapon / (use) item / (leave) inventory" << endl;
+				cout << "----------------------------------------------------------------------------" << endl;
+				cin >> input;
+				cin.clear();
+				cout << "----------------------------------------------------------------------------" << endl;
+				continue;
+			}
+
+			if (!inventoryItem[inputNum - 1].canUse)
+			{
+				cout << "This item isn't usable." << endl;
+				cout << "----------------------------------------------------------------------------" << endl;
+				cout << "Options: (change) current weapon / (use) item / (leave) inventory" << endl;
+				cout << "----------------------------------------------------------------------------" << endl;
+				cin >> input;
+				cin.clear();
+				cout << "----------------------------------------------------------------------------" << endl;
 				continue;
 			}
 
