@@ -32,7 +32,7 @@ bool openingFunction()
 	{
 		if (input.find("enter") != string::npos || input.find("forward") != string::npos || input.find("in") != string::npos)
 		{
-			cout << "You walk into the dark corridor of the pyramid's entrance. The room has \nfour doors, one in each direction. As you enter,"
+			cout << "As you pass through the imposing entrance of the pyramid, a cool draft of air welcomes you into the ancient structure. The room has \nfour doors, one in each direction. Suddenly,"
 				<< " the entrance to the pyramid \nbehind you slams shut.\n" << endl;
 			return false;
 		}
@@ -66,18 +66,18 @@ int main()
 
 	//Initialize weapons 
 	//Name, type, description, size, power, accuracy
-	Weapon sword("Rusty sword", "sword", "A dull weapon. Found at a previous dig site to\n	be kept as an antique.", 3, 5, 85); //Starting sword
+	Weapon sword("Rusty Sword", "sword", "A dull weapon. Found at a previous dig site to\n	be kept as an antique.", 3, 5, 85); //Starting sword
 
 	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the\n	word 'DEATH' engraved in its handle.", 5, 12, 60);
-	axe.setFindStr("A thick stone block sits in the center of the room. Against it leans a mighty axe.");
+	axe.setFindStr("Against the block, leans a mighty axe. Dull from its use, and covered in black, dried blood.");
 	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip.\n	Easy to use and keep your distance, but not the most effective.",9,9,80);
-	spear.setFindStr("");
+	spear.setFindStr("One weapon remains hung on the wall, a spear. It was the weapon of choice for the armies of Egypt.");
 	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break\n	swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
-	mace.setFindStr("");
+	mace.setFindStr("In the corner of your eye, you notice a handle under a fallen shield. You kick the\nshield to reveal a large, spiked metal ball at the end of it.");
 	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle.\n	Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
-	dagger.setFindStr("");
+	dagger.setFindStr("While almost all booths contain nothing of use, you notice a copper dagger on the counter of a mason's stand.");
 	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the\n	Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
-	khopesh.setFindStr("");
+	khopesh.setFindStr("On the wall, hangs a silver sword with a golden handle. Sharp and jeweled, the blade looks fit for a king.");
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
@@ -86,7 +86,7 @@ int main()
 	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power.\n	Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
 	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep\n	warriors in the battle.", 3, 40, 0);
-	potion2.setFindStr("One bottle rack, however, hangs in the corner of the room with a single\nbottle. On it, sits a sealed liquid with the label 'SEKHEM.'");
+	potion2.setFindStr("One bottle rack hangs in the corner of the room with a single\nbottle. On it, sits a sealed liquid with the label 'SEKHEM.'");
 	Item defib("Defibrillator", "device", "A weak and old defibrillator. Could be used to\n	spark adrenaline.", 6, 50, -10);
 	defib.setFindStr("Attached to the dead travelers chest are two sticky pads with wires leading to a device. In its decent condition, it could still work.");
 	Item apple("Apple", "food", "An apple! It has been a while since you've eaten. But, how did an apple get here?", 2, 7, 0);
@@ -97,14 +97,14 @@ int main()
 
 	//Initialize enemies
 	//Name, type, health, power, accuracy
-	Enemy leopard("Akin the Protector", "leopard", 9, 5, 50);
-	leopard.setFindStr("In the middle of the room, something covered in what appears as black\nrosettes rests. Upon closer look, you realize the rose shaped spots and the\ncream/orange background create the pattern of a large feline.");
+	Enemy leopard("Akin the Protector", "sphinx", 9, 5, 50);
+	leopard.setFindStr("In the center of the room, a majestic sphinx rests, its eyes seemingly following your every move.");
 	Enemy skeleton("Judas the Forgotten", "skeleton", 15, 3, 40);
 	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored\nskeleton of the abandoned body rises and guards the room.");
 	Enemy scribe("Dedi the Wicked", "scribe", 20, 4, 60);
-	scribe.setFindStr("");
+	scribe.setFindStr("Surrounded by candles and hieroglyphs drawn in blood, a scribe sits in the center of the room. They radiate a feeling of malice.");
 	Enemy lancer("Bomani the Undead","lancer",30,7,60);
-	lancer.setFindStr("");
+	lancer.setFindStr("The lid of a sarcophagus with a depiction of a horse slides off and falls to the\nground. From the dead arises a fallen lancer, ready to fight once again.");
 
 	//Boss
 	Enemy ra("Ra, God of the Sun", "Ra", 100, 10, 65);
@@ -125,7 +125,7 @@ int main()
 			if (x == 2 && y == 0) //Specifically set the first room differently
 			{
 				setRoom.setFirstRoom(true);
-				setRoom.setString("This is the first room");
+				setRoom.setString("The walls of this room are adorned with faded hieroglyphs, telling tales of pharaohs and gods.\nA dim glow emanates from a few torches. The air is thick with a sense of mystery, and the stone underfoot bears the weight of centuries.");
 			}
 
 			//Set room in the 2D array
@@ -142,42 +142,42 @@ int main()
 
 	//Set enemies in rooms and related entrance string
 	rooms[2][1].setEnemy(leopard);
-	rooms[2][1].setString("");
+	rooms[2][1].setString("You find yourself in an cavern with walls carved with ancient\nsymbols. It seems as though they never carved it like the rest of the rooms.\nThe air is tinged with an otherworldly energy, and the flickering torchlight casts eerie shadows.");
 
 	rooms[0][2].setEnemy(skeleton);
-	rooms[0][2].setString("");
+	rooms[0][2].setString("You enter a room with an empty altar in the middle. Beside it, the body of a guard lay. He must've given his life to protect whatever was there.");
 
 	rooms[4][0].setEnemy(scribe);
-	rooms[4][0].setString("");
+	rooms[4][0].setString("You step into a vast room filled with towering shelves of ancient scrolls and papyrus. The air is thick with\nthe musty scent of knowledge.");
 
 	rooms[1][3].setEnemy(lancer);
-	rooms[1][3].setString("");
+	rooms[1][3].setString("Dimly lit torches cast eerie shadows on the stone walls adorned with funerary paintings.\nSarcophagi, some cracked open, line the chamber, and an unsettling silence hangs in the air.");
 
 	rooms[3][3].setEnemy(ra);
 	rooms[3][3].setString("You enter a royal chamber. Almost everything present is trimmed or made entirely of gold. Paintings and shrines\ndepict legendary battles, but all share a single character, Ra. At the North side of the room, a throne sits.");
 
 	//Set weapons in rooms and related entrance string
 	rooms[3][2].setWeapon(axe);
-	rooms[3][2].setString("");
+	rooms[3][2].setString("You enter what must've been an execution chamber. Benches round the room with a large stone\nin the center while a wheeled guillotine rests in the corner. The atmosphere instills fear in you.");
 
 	rooms[0][3].setWeapon(khopesh);
-	rooms[0][3].setString("");
+	rooms[0][3].setString("Upon entering, you find a secret chamber with walls adorned with precious jewels and golden artifacts. A mysterious aura fills the air, and a single flickering torch barely illuminates the room.");
 
 	rooms[4][1].setWeapon(spear);
-	rooms[4][1].setString("");
+	rooms[4][1].setString("You enter an abandoned armory. The solemn stillness of the room whispers tales of\nbattles long gone, now only echoes in the hollow chambers of this forsaken arsenal.");
 
 	rooms[1][0].setWeapon(dagger);
-	rooms[1][0].setString("");
+	rooms[1][0].setString("You're surrounded by abandoned stalls laden with exotic spices, colorful fabrics, and\nintricate trinkets. The stalls have vibrant tapestries, creating a lively aura of sights and sounds.");
 
 	rooms[1][2].setWeapon(mace);
-	rooms[1][2].setString("");
+	rooms[1][2].setString("Upon entering, your senses are overwhelmed by the scent of oiled metal and leather. An\narmory with shelves of shields lines the wall. All the weapons seem to be missing.");
 
 	//Set items in rooms and related entrance string
 	rooms[4][3].setItem(potion1);
 	rooms[4][3].setString("Statues line the room you enter, each of a different Egyptian god. However breath-taking, the\ntowering statues did not stand the test of time. Many are eroded and their details faded.");
 
 	rooms[2][2].setItem(potion2);
-	rooms[2][2].setString("Shelves and racks furnish this room. All of them appear to be ransacked and empty.");
+	rooms[2][2].setString("As you enter, you're surrounded by an array of empty vials, jars, and mysterious contraptions.\nStrange symbols are etched into the wooden tables, and ancient scrolls containing alchemical secrets line the shelves.");
 
 	rooms[3][0].setItem(apple);
 	rooms[3][0].setString("You enter into a large dining quarter. Tables, chairs, and benches line the room with two\nlarge, clay pots over a piles of ash. You imagine how lively this place must've been when it was full.");
