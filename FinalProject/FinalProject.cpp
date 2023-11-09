@@ -68,29 +68,29 @@ int main()
 	//Name, type, description, size, power, accuracy
 	Weapon sword("Rusty sword", "sword", "A dull weapon. Found at a previous dig site to\n	be kept as an antique.", 3, 5, 85); //Starting sword
 
-	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the word 'DEATH' engraved in its handle.", 5, 12, 60);
+	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the\n	word 'DEATH' engraved in its handle.", 5, 12, 60);
 	axe.setFindStr("A thick stone block sits in the center of the room. Against it leans a mighty axe.");
-	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip. \nEasy to use and keep your distance, but not the most effective.",9,9,80);
+	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip.\n	Easy to use and keep your distance, but not the most effective.",9,9,80);
 	spear.setFindStr("");
-	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
+	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break\n	swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
 	mace.setFindStr("");
 	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle.\n	Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
 	dagger.setFindStr("");
-	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
+	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the\n	Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
 	khopesh.setFindStr("");
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
 	Item rock("Rock", "rock", "a small rock.", 1, -1, 0, false);	//Starting item
 
-	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power. Magically imbued with the life of others.", 3, 5, 25);
+	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power.\n	Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
-	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep warriors in the battle.", 3, 40, 0);
-	potion2.setFindStr("A nearly empty bottle rack sits in the corner of the room. On it, sits a single sealed liquid with the label 'SEKHEM.'");
-	Item defib("Defibrillator", "device", "An weak and old defibrillator. Could be used to spark adrenaline.", 6, 50, -20);
-	defib.setFindStr("");
+	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep\n	warriors in the battle.", 3, 40, 0);
+	potion2.setFindStr("One bottle rack, however, hangs in the corner of the room with a single\nbottle. On it, sits a sealed liquid with the label 'SEKHEM.'");
+	Item defib("Defibrillator", "device", "A weak and old defibrillator. Could be used to\n	spark adrenaline.", 6, 50, -10);
+	defib.setFindStr("Attached to the dead travelers chest are two sticky pads with wires leading to a device. In its decent condition, it could still work.");
 	Item apple("Apple", "food", "An apple! It has been a while since you've eaten. But, how did an apple get here?", 2, 7, 0);
-	apple.setFindStr("");
+	apple.setFindStr("On a small table in the corner, a bright red apple sits. It's a wonder how it got there.");
 
 	//Boss item
 	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a\ndroplet-shaped loop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
@@ -108,7 +108,7 @@ int main()
 
 	//Boss
 	Enemy ra("Ra, God of the Sun", "Ra", 100, 10, 65);
-	ra.setFindStr("Upon the throne sits a man with the head of a falcon and a sun shaped crown. He wields a \nsceptor of gold in one hand, and wooden ankh in the other.");
+	ra.setFindStr("Upon the throne sits a man with the head of a falcon and a sun shaped crown. He wields a\nsceptor of gold in one hand, and wooden ankh in the other.");
 
 	//Initialize rooms
 	Room rooms[5][4];
@@ -154,7 +154,7 @@ int main()
 	rooms[1][3].setString("");
 
 	rooms[3][3].setEnemy(ra);
-	rooms[3][3].setString("");
+	rooms[3][3].setString("You enter a royal chamber. Almost everything present is trimmed or made entirely of gold. Paintings and shrines\ndepict legendary battles, but all share a single character, Ra. At the North side of the room, a throne sits.");
 
 	//Set weapons in rooms and related entrance string
 	rooms[3][2].setWeapon(axe);
@@ -174,16 +174,16 @@ int main()
 
 	//Set items in rooms and related entrance string
 	rooms[4][3].setItem(potion1);
-	rooms[4][3].setString("");
+	rooms[4][3].setString("Statues line the room you enter, each of a different Egyptian god. However breath-taking, the\ntowering statues did not stand the test of time. Many are eroded and their details faded.");
 
 	rooms[2][2].setItem(potion2);
-	rooms[2][2].setString("");
+	rooms[2][2].setString("Shelves and racks furnish this room. All of them appear to be ransacked and empty.");
 
 	rooms[3][0].setItem(apple);
-	rooms[3][0].setString("");
+	rooms[3][0].setString("You enter into a large dining quarter. Tables, chairs, and benches line the room with two\nlarge, clay pots over a piles of ash. You imagine how lively this place must've been when it was full.");
 
 	rooms[0][1].setItem(defib);
-	rooms[0][1].setString("");
+	rooms[0][1].setString("A horrifying smell retches you as the door opens. Dread fills your body as you\nenter this room and see a decaying body of a past traveler. You realize\nhis poor fate may not differ from your own.");
 
 	//Give player starting items
 	player.get(sword);
