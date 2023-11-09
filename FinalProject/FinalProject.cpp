@@ -16,11 +16,10 @@ using namespace std;
 bool openingFunction()
 {
 	cout << "----------------------------------------------------------------------------" << endl;
-
-
-	cout << "Opening introduction/story/setting goes here" << endl;
+	cout << "You are an archaeologist who's been studying the ancient Egyptian gods. Ra,\n" <<
+		"the God of the Sun and Egypt's first pharaoh, " << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
-	cout << "You find yourself at the base of an Egyptian pyramid. \nAn open door lies ahead of you." << endl;
+	cout << "You find yourself at the base of an Egyptian pyramid. An open door lies\nahead of you." << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 	string input;
 	cin >> input;
@@ -75,7 +74,7 @@ int main()
 	spear.setFindStr("");
 	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
 	mace.setFindStr("");
-	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle. Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
+	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle.\n	Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
 	dagger.setFindStr("");
 	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
 	khopesh.setFindStr("");
@@ -99,7 +98,7 @@ int main()
 	//Initialize enemies
 	//Name, type, health, power, accuracy
 	Enemy leopard("Akin the Protector", "leopard", 9, 5, 50);
-	leopard.setFindStr("In the middle of the room, something covered in what appears as black\nrosettes rests. Upon closer look, yourealize the rose shaped spots and the\ncream/orange background create the pattern of a large feline.");
+	leopard.setFindStr("In the middle of the room, something covered in what appears as black\nrosettes rests. Upon closer look, you realize the rose shaped spots and the\ncream/orange background create the pattern of a large feline.");
 	Enemy skeleton("Judas the Forgotten", "skeleton", 15, 3, 40);
 	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored\nskeleton of the abandoned body rises and guards the room.");
 	Enemy scribe("Dedi the Wicked", "scribe", 20, 4, 60);
@@ -114,6 +113,7 @@ int main()
 	//Initialize rooms
 	Room rooms[5][4];
 	
+	//Loop to set all rooms in 2D array
 	for (int x = 0; x < 5; x++)
 	{
 		for (int y = 0; y < 4; y++)
@@ -128,6 +128,7 @@ int main()
 				setRoom.setString("This is the first room");
 			}
 
+			//Set room in the 2D array
 			rooms[x][y] = setRoom;
 		}
 	}
