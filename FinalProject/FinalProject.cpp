@@ -32,8 +32,6 @@ bool openingFunction()
 	cin.clear();
 	cout << "----------------------------------------------------------------------------" << endl;
 
-	
-
 	while (input.find("quit") == string::npos)
 	{
 		if (input.find("enter") != string::npos || input.find("forward") != string::npos || input.find("in") != string::npos)
@@ -60,7 +58,6 @@ bool openingFunction()
 
 	return true;
 }
-
 
 int main()
 {
@@ -222,7 +219,6 @@ int main()
 	cout << "Explore the entire pyramid, defeat all enemies, and escape the temple of Ra!" << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 
-
 	int start = 0;
 	cout << "Enter any number to start (0 to quit): " << endl;
 	cin >> start;
@@ -241,7 +237,6 @@ int main()
 		cout << "Exiting game... Thank you for playing!" << endl;
 		exit(0);
 	}
-
 
 	//Initialize global variables for game
 	tuple <int, int, char> XYDirection;
@@ -264,7 +259,6 @@ int main()
 		currentRoom.visit();
 	}
 	cout << "----------------------------------------------------------------------------" << endl;
-
 
 	while (input.find("quit") == string::npos)	//Loop for each room
 	{
@@ -318,7 +312,6 @@ int main()
 					cin >> input;
 					cin.clear();
 					cout << "----------------------------------------------------------------------------" << endl;
-
 				}
 
 				if (input.find("quit") != string::npos || input.find("n") != string::npos || input.find("leave") != string::npos || input.find("run") != string::npos)
