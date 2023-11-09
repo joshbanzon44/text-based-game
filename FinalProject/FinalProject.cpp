@@ -17,9 +17,15 @@ bool openingFunction()
 {
 	cout << "----------------------------------------------------------------------------" << endl;
 	cout << "You are an archaeologist who's been studying the ancient Egyptian gods. Ra,\n" <<
-		"the God of the Sun and Egypt's first pharaoh, " << endl;
+		"the God of the Sun and Egypt's first pharaoh, has always stumped explorers\nsuch " <<
+		"as yourself.Despite records and depictions of his existence, little is\nknown of" <<
+		"his reign or when it concluded. You've dedicated your life to\nfinding his tomb, which all archaeologists believe hold the answers of his\nhistory." << endl;
+	cout << "\nOn one of your expeditions through the Sahara desert, you hear whispers\ncalling your name from the East, where the sun was setting. Curious and\nintrigued, you left your company to investigate.\n" << endl;
+	cout << "After much time passes, and the whispers suddenly stopped. Dazed and\nconfused, you return to reality and realize you've been chasing a mirage. \nYou turn around to return to your company, but they're no where in sight. " <<
+			"You\nwonder how far you've traveled, as it's already night. Frantically, you look\naround for any source of shelter or civilization. The desert gets cold at\nnight, and you aren't prepared for this.\n" << endl <<
+			"In the distance, you see a light and the tip of a structure barely peaking \nover a dune. You scale the dune and see an monstrous pyramid with a light\ngleaming out the front." << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
-	cout << "You find yourself at the base of an Egyptian pyramid. An open door lies\nahead of you." << endl;
+	cout << "You find yourself at the base of the pyramid. An open door lies\nin front of you." << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 	string input;
 	cin >> input;
