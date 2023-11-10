@@ -21,11 +21,11 @@ bool openingFunction()
 		"as yourself.Despite records and depictions of his existence, little is\nknown of" <<
 		"his reign or when it concluded. You've dedicated your life to\nfinding his tomb, which all archaeologists believe hold the answers of his\nhistory." << endl;
 	cout << "\nOn one of your expeditions through the Sahara desert, you hear whispers\ncalling your name from the East, where the sun was setting. Curious and\nintrigued, you left your company to investigate.\n" << endl;
-	cout << "After much time passes, and the whispers suddenly stopped. Dazed and\nconfused, you return to reality and realize you've been chasing a mirage. \nYou turn around to return to your company, but they're no where in sight. " <<
-			"You\nwonder how far you've traveled, as it's already night. Frantically, you look\naround for any source of shelter or civilization. The desert gets cold at\nnight, and you aren't prepared for this.\n" << endl <<
+	cout << "After much time passes, and the whispers suddenly stopped. Dazed and\nconfused, you return to reality and realize you've been chasing a mirage. \nYou turn around to return to your company, but they're no where in sight.\n" <<
+			"You wonder how far you've traveled, as it's already night. Frantically, you\nlook around for any source of shelter or civilization. The desert gets cold\nat night, and you aren't prepared for this.\n" << endl <<
 			"In the distance, you see a light and the tip of a structure barely peaking \nover a dune. You scale the dune and see an monstrous pyramid with a light\ngleaming out the front." << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
-	cout << "You find yourself at the base of the pyramid. An open door lies\nin front of you." << endl;
+	cout << "You find yourself at the base of the pyramid. An open door lies in front of\nyou." << endl;
 	cout << "----------------------------------------------------------------------------" << endl;
 	string input;
 	cin >> input;
@@ -36,8 +36,8 @@ bool openingFunction()
 	{
 		if (input.find("enter") != string::npos || input.find("forward") != string::npos || input.find("in") != string::npos)
 		{
-			cout << "As you pass through the imposing entrance of the pyramid, a cool draft of air welcomes you into the ancient structure. The room has \nfour doors, one in each direction. Suddenly,"
-				<< " the entrance to the pyramid \nbehind you slams shut.\n" << endl;
+			cout << "As you pass through the imposing entrance of the pyramid, a cool draft of\nair welcomes you into the ancient structure. The room has four doors, one in\neach direction. Suddenly,"
+				<< " the entrance to the pyramid behind you slams shut.\n" << endl;
 			return false;
 		}
 		if (input.find("leave") != string::npos || input.find("away") != string::npos || input.find("left") != string::npos || input.find("right") != string::npos)
@@ -72,28 +72,28 @@ int main()
 	Weapon sword("Rusty Sword", "sword", "A dull weapon. Found at a previous dig site to\n	be kept as an antique.", 3, 5, 85); //Starting sword
 
 	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the\n	word 'DEATH' engraved in its handle.", 5, 12, 60);
-	axe.setFindStr("Against the block, leans a mighty axe. Dull from its use, and covered in black, dried blood.");
+	axe.setFindStr("Against the block, leans a mighty axe. Dull from its use, and covered in \nblack, dried blood.");
 	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip.\n	Easy to use and keep your distance, but not the most effective.",9,9,80);
-	spear.setFindStr("One weapon remains hung on the wall, a spear. It was the weapon of choice for the armies of Egypt.");
+	spear.setFindStr("One weapon remains hung on the wall, a spear. It was the weapon of choice\nfor the armies of Egypt.");
 	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break\n	swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
-	mace.setFindStr("In the corner of your eye, you notice a handle under a fallen shield. You kick the\nshield to reveal a large, spiked metal ball at the end of it.");
+	mace.setFindStr("In the corner of your eye, you notice a handle under a fallen shield. You\nkick the shield to reveal a large, spiked metal ball at the end of it.");
 	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle.\n	Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
-	dagger.setFindStr("While almost all booths contain nothing of use, you notice a copper dagger on the counter of a mason's stand.");
+	dagger.setFindStr("While almost all booths contain nothing of use, you notice a copper dagger\non the counter of a mason's stand.");
 	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the\n	Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
-	khopesh.setFindStr("On the wall, hangs a silver sword with a golden handle. Sharp and jeweled, the blade looks fit for a king.");
+	khopesh.setFindStr("On the wall, hangs a silver sword with a golden handle. Sharp and jeweled,\nthe blade looks fit for a king.");
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
 	Item rock("Rock", "rock", "a small rock.", 1, -1, 0, false);	//Starting item
 
 	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power.\n	Magically imbued with the life of others.", 3, 5, 25);
-	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink light.");
+	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink\nlight.");
 	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep\n	warriors in the battle.", 3, 40, 0);
-	potion2.setFindStr("One bottle rack hangs in the corner of the room with a single\nbottle. On it, sits a sealed liquid with the label 'SEKHEM.'");
+	potion2.setFindStr("One bottle rack hangs in the corner of the room with a single bottle. On it,\nsits a sealed liquid with the label 'SEKHEM.'");
 	Item defib("Defibrillator", "device", "A weak and old defibrillator. Could be used to\n	spark adrenaline.", 6, 50, -10);
-	defib.setFindStr("Attached to the dead travelers chest are two sticky pads with wires leading to a device. In its decent condition, it could still work.");
-	Item apple("Apple", "food", "An apple! It has been a while since you've eaten. But, how did an apple get here?", 2, 7, 0);
-	apple.setFindStr("On a small table in the corner, a bright red apple sits. It's a wonder how it got there.");
+	defib.setFindStr("Attached to the dead travelers chest are two sticky pads with wires leading\nto a device. In its decent condition, it could still work.");
+	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.\n	But, how did an apple get here?", 2, 7, 0);
+	apple.setFindStr("On a small table in the corner, a bright red apple sits. It's a wonder how\nit got there.");
 
 	//Boss item
 	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a\ndroplet-shaped loop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
@@ -101,17 +101,17 @@ int main()
 	//Initialize enemies
 	//Name, type, health, power, accuracy
 	Enemy leopard("Akin the Protector", "sphinx", 9, 5, 50);
-	leopard.setFindStr("In the center of the room, a majestic sphinx rests, its eyes seemingly following your every move.");
+	leopard.setFindStr("In the center of the room, a majestic sphinx rests, its eyes seemingly\nfollowing your every move.");
 	Enemy skeleton("Judas the Forgotten", "skeleton", 15, 3, 40);
 	skeleton.setFindStr("As you enter, the remains of a temple guard begin to reanimate. An armored\nskeleton of the abandoned body rises and guards the room.");
 	Enemy scribe("Dedi the Wicked", "scribe", 20, 4, 60);
-	scribe.setFindStr("Surrounded by candles and hieroglyphs drawn in blood, a scribe sits in the center of the room. They radiate a feeling of malice.");
+	scribe.setFindStr("Surrounded by candles and hieroglyphs drawn in blood, a scribe sits in the\ncenter of the room. They radiate a feeling of malice.");
 	Enemy lancer("Bomani the Undead","lancer",30,7,60);
-	lancer.setFindStr("The lid of a sarcophagus with a depiction of a horse slides off and falls to the\nground. From the dead arises a fallen lancer, ready to fight once again.");
+	lancer.setFindStr("The lid of a sarcophagus with a depiction of a horse slides off and falls to\nthe ground. From the dead arises a fallen lancer, ready to fight once again.");
 
 	//Boss
 	Enemy ra("Ra, God of the Sun", "Ra", 100, 10, 65);
-	ra.setFindStr("Upon the throne sits a man with the head of a falcon and a sun shaped crown. He wields a\nsceptor of gold in one hand, and wooden ankh in the other.");
+	ra.setFindStr("Upon the throne sits a man with the head of a falcon and a sun shaped crown.\nHe wields a sceptor of gold in one hand, and wooden ankh in the other.");
 
 	//Initialize rooms
 	Room rooms[5][4];
@@ -121,14 +121,13 @@ int main()
 	{
 		for (int y = 0; y < 4; y++)
 		{
+			//Initialize each room
 			Room setRoom(x, y);
-			string s = "This is room (" + to_string(x) + "," + to_string(y) + ").";
-			setRoom.setString(s);
 
 			if (x == 2 && y == 0) //Specifically set the first room differently
 			{
 				setRoom.setFirstRoom(true);
-				setRoom.setString("The walls of this room are adorned with faded hieroglyphs, telling tales of pharaohs and gods.\nA dim glow emanates from a few torches. The air is thick with a sense of mystery, and the stone underfoot bears the weight of centuries.");
+				setRoom.setString("The walls of this room are adorned with faded hieroglyphs, telling tales of\npharaohs and gods. A dim glow emanates from a few torches. The air is thick\nwith a sense of mystery, and the stone underfoot bears the weight of\ncenturies.");
 			}
 
 			//Set room in the 2D array
@@ -137,56 +136,56 @@ int main()
 	}
 
 	//Set empty room entrance strings
-	rooms[0][0].setString("You enter an empty room. The variance of fade on the floor tells you whatever\nwas here was either moved, or taken.");
-	rooms[1][1].setString("You enter a cracked room where debris fell from the ceiling and smashed the ground in the\ncenter of the room. Time has laid waste to this room and leaves it unidentifiable.");
+	rooms[0][0].setString("You enter an empty room. The variance of fade on the floor tells you\nwhatever was here was either moved, or taken.");
+	rooms[1][1].setString("You enter a cracked room where debris fell from the ceiling and smashed the\nground in the center of the room. Time has laid waste to this room and\nleaves it unidentifiable.");
 	rooms[2][3].setString("You enter a tall but empty room. Faded art covers only half the ceiling and\nscaffolding blocks one of the doors. Who knows why they never finished.");
-	rooms[3][1].setString("You enter a room with what looks like a well in the center. Thirsty and excited,\nyou run to it only to find it dry. You can't remember the last time you had water.");
-	rooms[4][2].setString("You enter an empty room. The variance of fade on the floor tells you whatever\nwas here was either moved, or taken.");
+	rooms[3][1].setString("You enter a room with what looks like a well in the center. Thirsty and\nexcited, you run to it only to find it dry. You can't remember the last time\nyou had water.");
+	rooms[4][2].setString("You enter an empty room. The variance of fade on the floor tells you\nwhatever was here was either moved, or taken.");
 
 	//Set enemies in rooms and related entrance string
 	rooms[2][1].setEnemy(leopard);
-	rooms[2][1].setString("You find yourself in an cavern with walls carved with ancient\nsymbols. It seems as though they never carved it like the rest of the rooms.\nThe air is tinged with an otherworldly energy, and the flickering torchlight casts eerie shadows.");
+	rooms[2][1].setString("You find yourself in an cavern with walls carved with ancient symbols. It\nseems as though they never carved it like the rest of the rooms. The air is\ntinged with an otherworldly energy, and the flickering torchlight casts\neerie shadows.");
 
 	rooms[0][2].setEnemy(skeleton);
-	rooms[0][2].setString("You enter a room with an empty altar in the middle. Beside it, the body of a guard lay. He must've given his life to protect whatever was there.");
+	rooms[0][2].setString("You enter a room with an empty altar in the middle. Beside it, the body of a\nguard lay. He must've given his life to protect whatever was there.");
 
 	rooms[4][0].setEnemy(scribe);
-	rooms[4][0].setString("You step into a vast room filled with towering shelves of ancient scrolls and papyrus. The air is thick with\nthe musty scent of knowledge.");
+	rooms[4][0].setString("You step into a vast room filled with towering shelves of ancient scrolls\nand papyrus. The air is thick with the musty scent of knowledge.");
 
 	rooms[1][3].setEnemy(lancer);
-	rooms[1][3].setString("Dimly lit torches cast eerie shadows on the stone walls adorned with funerary paintings.\nSarcophagi, some cracked open, line the chamber, and an unsettling silence hangs in the air.");
+	rooms[1][3].setString("Dimly lit torches cast eerie shadows on the stone walls adorned with\nfunerary paintings. Sarcophagi, some cracked open, line the chamber, and an\nunsettling silence hangs in the air.");
 
 	rooms[3][3].setEnemy(ra);
-	rooms[3][3].setString("You enter a royal chamber. Almost everything present is trimmed or made entirely of gold. Paintings and shrines\ndepict legendary battles, but all share a single character, Ra. At the North side of the room, a throne sits.");
+	rooms[3][3].setString("You enter a royal chamber. Almost everything present is trimmed or made\nentirely of gold. Paintings and shrines depict legendary battles, but all\nshare a single character, Ra. At the North side of the room, a throne sits.");
 
 	//Set weapons in rooms and related entrance string
 	rooms[3][2].setWeapon(axe);
-	rooms[3][2].setString("You enter what must've been an execution chamber. Benches round the room with a large stone\nin the center while a wheeled guillotine rests in the corner. The atmosphere instills fear in you.");
+	rooms[3][2].setString("You enter what must've been an execution chamber. Benches round the room\nwith a large stone in the center while a wheeled guillotine rests in the\ncorner. The atmosphere instills fear in you.");
 
 	rooms[0][3].setWeapon(khopesh);
-	rooms[0][3].setString("Upon entering, you find a secret chamber with walls adorned with precious jewels and golden artifacts. A mysterious aura fills the air, and a single flickering torch barely illuminates the room.");
+	rooms[0][3].setString("Upon entering, you find a secret chamber with walls adorned with precious\njewels and golden artifacts. A mysterious aura fills the air, and a single\nflickering torch barely illuminates the room.");
 
 	rooms[4][1].setWeapon(spear);
-	rooms[4][1].setString("You enter an abandoned armory. The solemn stillness of the room whispers tales of\nbattles long gone, now only echoes in the hollow chambers of this forsaken arsenal.");
+	rooms[4][1].setString("You enter an abandoned armory. The solemn stillness of the room whispers\ntales of battles long gone, now only echoes in the hollow chambers of this\nforsaken arsenal.");
 
 	rooms[1][0].setWeapon(dagger);
-	rooms[1][0].setString("You're surrounded by abandoned stalls laden with exotic spices, colorful fabrics, and\nintricate trinkets. The stalls have vibrant tapestries, creating a lively aura of sights and sounds.");
+	rooms[1][0].setString("You're surrounded by abandoned stalls laden with exotic spices, colorful\nfabrics, and intricate trinkets. The stalls have vibrant tapestries,\ncreating a lively aura of sights and sounds.");
 
 	rooms[1][2].setWeapon(mace);
-	rooms[1][2].setString("Upon entering, your senses are overwhelmed by the scent of oiled metal and leather. An\narmory with shelves of shields lines the wall. All the weapons seem to be missing.");
+	rooms[1][2].setString("Upon entering, your senses are overwhelmed by the scent of oiled metal and\nleather. An armory with shelves of shields lines the wall. All the weapons\nseem to be missing.");
 
 	//Set items in rooms and related entrance string
 	rooms[4][3].setItem(potion1);
-	rooms[4][3].setString("Statues line the room you enter, each of a different Egyptian god. However breath-taking, the\ntowering statues did not stand the test of time. Many are eroded and their details faded.");
+	rooms[4][3].setString("Statues line the room you enter, each of a different Egyptian god. However\nbreath-taking, the towering statues did not stand the test of time. Many are\neroded and their details faded.");
 
 	rooms[2][2].setItem(potion2);
-	rooms[2][2].setString("As you enter, you're surrounded by an array of empty vials, jars, and mysterious contraptions.\nStrange symbols are etched into the wooden tables, and ancient scrolls containing alchemical secrets line the shelves.");
+	rooms[2][2].setString("As you enter, you're surrounded by an array of empty vials, jars, and\nmysterious contraptions. Strange symbols are etched into the wooden tables,\nand ancient scrolls containing alchemical secrets line the shelves.");
 
 	rooms[3][0].setItem(apple);
-	rooms[3][0].setString("You enter into a large dining quarter. Tables, chairs, and benches line the room with two\nlarge, clay pots over a piles of ash. You imagine how lively this place must've been when it was full.");
+	rooms[3][0].setString("You enter into a large dining quarter. Tables, chairs, and benches line the\nroom with two large, clay pots over a piles of ash. You imagine how lively\nthis place must've been when it was full.");
 
 	rooms[0][1].setItem(defib);
-	rooms[0][1].setString("A horrifying smell retches you as the door opens. Dread fills your body as you\nenter this room and see a decaying body of a past traveler. You realize\nhis poor fate may not differ from your own.");
+	rooms[0][1].setString("A horrifying smell retches you as the door opens. Dread fills your body as\nyou enter this room and see a decaying body of a past traveler. You realize\nhis poor fate may not differ from your own.");
 
 	//Give player starting items
 	player.get(sword);
@@ -256,7 +255,7 @@ int main()
 	if (!currentRoom.hasBeenVisited())
 	{
 		roomsVisited++;
-		currentRoom.visit();
+		rooms[get<0>(XYDirection)][get<1>(XYDirection)].visit();
 	}
 	cout << "----------------------------------------------------------------------------" << endl;
 
@@ -332,7 +331,7 @@ int main()
 				}
 				else
 				{
-					currentRoom.hasEnemy = false;
+					rooms[get<0>(XYDirection)][get<1>(XYDirection)].setEnemyFalse();
 					enemiesDefeated++;
 					cout << "----------------------------------------------------------------------------" << endl;
 					cout << "You defeated " << currentRoom.getEnemy().name << "." << endl;
@@ -357,14 +356,16 @@ int main()
 			else if ((input.find("get") != string::npos || input.find("pick") != string::npos) && currentRoom.hasItem)	//Pick up item
 			{
 				player.get(currentRoom.getItem());
-				currentRoom.hasItem = false;
+				rooms[get<0>(XYDirection)][get<1>(XYDirection)].setItemFalse();
+				rooms[get<0>(XYDirection)][get<1>(XYDirection)].setWeaponFalse();
 				cout << "You pick up the " << currentRoom.getItem().type << "." << endl;
 				cout << "----------------------------------------------------------------------------" << endl;
 			}
 			else if ((input.find("get") != string::npos || input.find("pick") != string::npos) && currentRoom.hasWeapon)	//Pick up weapon
 			{
 				player.get(currentRoom.getWeapon());
-				currentRoom.hasWeapon = false;
+				rooms[get<0>(XYDirection)][get<1>(XYDirection)].setWeaponFalse();
+				rooms[get<0>(XYDirection)][get<1>(XYDirection)].setItemFalse();
 
 				cout << "You pick up the " << currentRoom.getWeapon().type << "." << endl;
 				cout << "----------------------------------------------------------------------------" << endl;

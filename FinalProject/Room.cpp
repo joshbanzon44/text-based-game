@@ -54,11 +54,11 @@ void Room::enter(char directionInput)
 	{
 		enemy.findStr();
 	}
-	else if (hasWeapon)
+	if (hasWeapon)
 	{
 		weapon.findStr();
 	}
-	else if (hasItem)
+	if (hasItem)
 	{
 		item.findStr();
 	}
@@ -240,6 +240,7 @@ void Room::setWeapon(Weapon w)
 }
 Weapon Room::getWeapon() //Return room's enemy if not null
 {
+	hasWeapon = false;
 	return weapon;
 }
 
@@ -251,6 +252,7 @@ void Room::setItem(Item i)
 }
 Item Room::getItem() //Return room's item if not null
 {
+	hasItem = false;
 	return item;
 }
 
@@ -266,4 +268,15 @@ void Room::entranceStr()
 	cout << enterStr << endl;
 }
 
-
+void Room::setEnemyFalse()
+{
+	hasEnemy = false;
+}
+void Room::setItemFalse()
+{
+	hasItem = false;
+}
+void Room::setWeaponFalse()
+{
+	hasWeapon = false;
+}

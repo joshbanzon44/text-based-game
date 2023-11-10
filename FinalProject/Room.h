@@ -50,6 +50,10 @@ public:
 	bool hasItem = false;
 	bool hasWeapon = false;
 
+	void setEnemyFalse();
+	void setItemFalse();
+	void setWeaponFalse();
+
 	//Constructor (X, Y)
 	Room(int xCoor = 0, int yCoor = 0);
 
