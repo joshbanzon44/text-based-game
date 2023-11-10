@@ -73,24 +73,24 @@ int main()
 
 	Weapon axe("Axe of Death", "axe", "Weapon of choice for an executioner, with the\n	word 'DEATH' engraved in its handle.", 5, 12, 60);
 	axe.setFindStr("Against the block, leans a mighty axe. Dull from its use, and covered in \nblack, dried blood.");
-	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but small bronze tip.\n	Easy to use and keep your distance, but not the most effective.",9,9,80);
+	Weapon spear("Bronze-Tipped Spear","spear","Long handled weapon with a sharp but\n	small bronze tip. Easy to use and keep your distance, but not the\n	most effective.",9,9,80);
 	spear.setFindStr("One weapon remains hung on the wall, a spear. It was the weapon of choice\nfor the armies of Egypt.");
 	Weapon mace("Morning Star","mace","Two-handed, spiked weapon designed to break\n	swords and even the strongest armor. Almost too heavy to wield.",5,20,45);
 	mace.setFindStr("In the corner of your eye, you notice a handle under a fallen shield. You\nkick the shield to reveal a large, spiked metal ball at the end of it.");
 	Weapon dagger("Copper Dagger","dagger","A small copper blade with a wooden handle.\n	Likely used as a tool by its predecessors, but doubles as a weapon.",2,5,95);
 	dagger.setFindStr("While almost all booths contain nothing of use, you notice a copper dagger\non the counter of a mason's stand.");
-	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the\n	Egyptians. Used in ancient warface for deadly close quartered combat, or a symbol of power.", 7,15,85);
+	Weapon khopesh("Royal Saber","khopesh","A curved/sickle-shaped sword native to the\n	Egyptians. Used in ancient warface for deadly close quartered\n	combat, or a symbol of power.", 7,15,85);
 	khopesh.setFindStr("On the wall, hangs a silver sword with a golden handle. Sharp and jeweled,\nthe blade looks fit for a king.");
 
 	//Initialize items
 	//Name, type, description, size, health increase, max health increase
 	Item rock("Rock", "rock", "a small rock.", 1, -1, 0, false);	//Starting item
 
-	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen power.\n	Magically imbued with the life of others.", 3, 5, 25);
+	Item potion1("Elixir of Life", "potion", "Pink, glowing liquid that holds unseen\n	power. Magically imbued with the life of others.", 3, 5, 25);
 	potion1.setFindStr("Beneath the rubble of a decayed statue, a glass bottle emits a bright pink\nlight.");
-	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used to keep\n	warriors in the battle.", 3, 40, 0);
+	Item potion2("Elixir of Healing", "potion", "Nutritional and restorative liquid used\n	to keep warriors in the battle.", 3, 40, 0);
 	potion2.setFindStr("One bottle rack hangs in the corner of the room with a single bottle. On it,\nsits a sealed liquid with the label 'SEKHEM.'");
-	Item defib("Defibrillator", "device", "A weak and old defibrillator. Could be used to\n	spark adrenaline.", 6, 50, -10);
+	Item defib("Defibrillator", "device", "A weak and old defibrillator. Could be used\n	to spark adrenaline.", 6, 50, -10);
 	defib.setFindStr("Attached to the dead travelers chest are two sticky pads with wires leading\nto a device. In its decent condition, it could still work.");
 	Item apple("Apple", "food", "An apple! It has been a while since you've eaten.\n	But, how did an apple get here?", 2, 7, 0);
 	apple.setFindStr("On a small table in the corner, a bright red apple sits. It's a wonder how\nit got there.");
