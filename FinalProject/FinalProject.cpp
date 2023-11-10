@@ -96,7 +96,9 @@ int main()
 	apple.setFindStr("On a small table in the corner, a bright red apple sits. It's a wonder how\nit got there.");
 
 	//Boss item
-	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped and topped by a\ndroplet-shaped loop. The engravings on it are of a language beyond history.", 1 , 0, 0, false);
+	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped\n	and topped by a droplet-shaped loop. The engravings on it are of a\n	language beyond history.", 1 , 0, 0, false);
+
+	player.get(ankh);
 
 	//Initialize enemies
 	//Name, type, health, power, accuracy
@@ -343,6 +345,7 @@ int main()
 						cout << "----------------------------------------------------------------------------" << endl;
 						cout << "You pick up the ankh." << endl;
 						cout << "----------------------------------------------------------------------------" << endl;
+						player.get(ankh);
 					}
 
 					currentRoom.entranceStr();

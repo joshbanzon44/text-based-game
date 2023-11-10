@@ -82,7 +82,12 @@ void Player::openInventory()
 
 	while (input.find("exit") == string::npos || input.find("close") == string::npos || input.find("leave") == string::npos) // Inventory loop
 	{
-		if (input.find("exit") != string::npos || input.find("close") != string::npos || input.find("leave") != string::npos) //Exit inventory choice
+		if (input.find("quit") != string::npos)
+		{
+			cout << "Exiting...Thank you for playing!" << endl;
+			exit(0);
+		}
+		else if (input.find("exit") != string::npos || input.find("close") != string::npos || input.find("leave") != string::npos) //Exit inventory choice
 		{
 			system("cls");
 			cout << "----------------------------------------------------------------------------" << endl;
@@ -222,16 +227,16 @@ bool Player::fight(Enemy en)
 
 		//Interface for fighting
 		cout << "*****************************************************************************" << endl;
-		cout << "You: " << healthCurrent << "/" << healthMax << string((52-en.name.length()-7), ' ') << en.name << ": " << en.healthCurrent << "/" << en.healthMax << endl;
+		cout << "You: " << healthCurrent << "/" << healthMax << string((66-en.name.length()-7), ' ') << en.name << ": " << en.healthCurrent << "/" << en.healthMax << endl;
 		playerHealthBar = float(healthCurrent) / float(healthMax);
 		playerHealthBar *= 10.0;
-		enemyHealthBar = en.healthCurrent / en.healthMax;
+		enemyHealthBar = float(en.healthCurrent) / float(en.healthMax);
 		enemyHealthBar *= 10.0;
 
 		string dash = "-";
 
-		cout << "|" << string(int(playerHealthBar), '-') << string((10-int(playerHealthBar)), ' ') << "|					    |" << string(int(enemyHealthBar), '-') << string((10 - int(enemyHealthBar)), ' ') << "|" << endl << endl;
-		cout << "|" << string(int(playerHealthBar), '-') << string((10 - int(playerHealthBar)), ' ') << "|					    |" << string(int(enemyHealthBar), '-') << string((10 - int(enemyHealthBar)), ' ') << "|" << endl << endl;
+		cout << "|" << string(int(playerHealthBar), '-') << string((10 - int(playerHealthBar)), ' ') << "|" << string(53, ' ') << "|" << string(int(enemyHealthBar), '-') << string((10 - int(enemyHealthBar)), ' ') << "|" << endl << endl;
+		cout << "|" << string(int(playerHealthBar), '-') << string((10 - int(playerHealthBar)), ' ') << "|" << string(53, ' ') << "|" << string(int(enemyHealthBar), '-') << string((10 - int(enemyHealthBar)), ' ') << "|" << endl << endl;
 		cout << endl << summary << winStr << endl;
 		cout << "*****************************************************************************" << endl;
 		cout << "			Options: attack, block" << endl;

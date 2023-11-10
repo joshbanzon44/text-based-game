@@ -10,6 +10,8 @@ Item::Item()
 {
 	//cout << "Item created." << endl;
 	size = 1;
+	healthIncrease = 0;
+	maxHealthIncrease = 0;
 }
 
 //Parameterized constructor
@@ -21,7 +23,7 @@ Item::Item(string n, string t, string d, int s, int h, int m, bool u)
 	size = s;
 	healthIncrease = h;
 	maxHealthIncrease = m;
-	canUse = false;
+	canUse = u;
 	cout << "Item created." << endl;
 }
 
