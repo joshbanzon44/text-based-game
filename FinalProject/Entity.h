@@ -15,7 +15,6 @@ public:
 	string name;
 	int healthMax;
 	int healthCurrent;
-	int speed;
 
 
 };
