@@ -300,7 +300,7 @@ bool Player::fight(Enemy en)
 			else if (random1 <= 85 && random2 <= en.accuracy) //85% chance to block
 			{
 				summary = "You block " + en.name + "'s attack and reduce it's damage to " + to_string((currentWeapon.power/2)) + " damage.";
-				en.healthCurrent -= (currentWeapon.power/2);
+				healthCurrent -= (en.power/2);
 			}
 			else if (random2 <= en.accuracy)				//Block fails and enemies attack hits
 			{

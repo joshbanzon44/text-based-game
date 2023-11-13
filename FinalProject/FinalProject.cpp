@@ -98,8 +98,6 @@ int main()
 	//Boss item
 	Item ankh("Ra's Ankh","ankh","Egyptian symbol of life. Wooden totem, t-shaped\n	and topped by a droplet-shaped loop. The engravings on it are of a\n	language beyond history.", 1 , 0, 0, false);
 
-	player.get(ankh);
-
 	//Initialize enemies
 	//Name, type, health, power, accuracy
 	Enemy leopard("Akin the Protector", "sphinx", 9, 5, 50);
@@ -333,6 +331,7 @@ int main()
 				}
 				else
 				{
+					currentRoom.setEnemyFalse();
 					rooms[get<0>(XYDirection)][get<1>(XYDirection)].setEnemyFalse();
 					enemiesDefeated++;
 					cout << "----------------------------------------------------------------------------" << endl;
@@ -377,7 +376,7 @@ int main()
 			{
 				cout << "There are not any items to pick up." << endl;
 			}
-			else if (input.find("open") != string::npos || input.find("inv") != string::npos || input.find("backpack") != string::npos)		//Sneak
+			else if (input.find("open") != string::npos || input.find("inventory") != string::npos || input.find("backpack") != string::npos)		//Sneak
 			{
 				system("cls");
 				player.openInventory();
