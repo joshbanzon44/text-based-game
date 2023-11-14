@@ -1,0 +1,9 @@
+These are all the words that are valid to be used at some point in "Wrath of Ra."
+
+Keywords:
+"quit", "leave", "enter", "forward", "in", "away", "left", "right", "fight", 
+"attack", "block", "get", "pickup", "ready", "yes", "no", "go", "run", "open", 
+"inventory", "forward", "backward", "please", "stay", "dont", "change", "use",
+"exit", "close", "item", "weapon", "stab", "swing", "parry", "guard"
+
+Numbers are able to be used at certain times as well.

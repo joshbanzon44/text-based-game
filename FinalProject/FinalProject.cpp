@@ -293,12 +293,12 @@ int main()
 					{
 						break;
 					}
-					else if (input.find("ready") != string::npos || input.find("y") != string::npos || input.find("go") != string::npos)
+					else if (input.find("ready") != string::npos || input.find("yes") != string::npos || input.find("go") != string::npos)
 					{
 						ready = true;
 						continue;
 					}
-					else if (input.find("n") != string::npos || input.find("leave") != string::npos || input.find("run") != string::npos)
+					else if (input.find("no") != string::npos || input.find("leave") != string::npos || input.find("run") != string::npos)
 					{
 						cout << "You flee from " << currentRoom.getEnemy().name << "." << endl;
 						break;
@@ -313,7 +313,7 @@ int main()
 					cout << "----------------------------------------------------------------------------" << endl;
 				}
 
-				if (input.find("quit") != string::npos || input.find("n") != string::npos || input.find("leave") != string::npos || input.find("run") != string::npos)
+				if (input.find("quit") != string::npos || input.find("no") != string::npos || input.find("leave") != string::npos || input.find("run") != string::npos)
 				{
 					break;
 				}
